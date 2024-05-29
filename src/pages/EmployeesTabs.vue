@@ -1,10 +1,11 @@
 <template>
   <v-card>
     <v-tabs v-model="tab" align-tabs="center" color="deep-purple-accent-4">
-      <v-tab value="1">Sidan 1</v-tab>
-      <v-tab value="2">Sidan 2</v-tab>
+      <v-tab value="1">Page 1</v-tab>
+      <v-tab value="2">Page 2</v-tab>
     </v-tabs>
 
+    <!-- Page 1 of the employee list-->
     <v-tabs-window v-model="tab">
       <v-tabs-window-item value="1">
         <v-container fluid>
@@ -21,8 +22,9 @@
         </v-container>
       </v-tabs-window-item>
 
+      <!-- Page 2 of the employee list-->
       <v-tabs-window-item value="2">
-        <v-container fluid>
+        <v-container>
           <v-row>
             <v-col
               v-for="employee in employeesPage2"
@@ -50,13 +52,14 @@ export default {
   },
   data() {
     return {
-      tab: 1,
+      tab: 2,
       employeesPage1: [],
       employeesPage2: [],
       loading: true,
       error: false,
     };
   },
+
   async created() {
     try {
       const [page1, page2] = await Promise.all([

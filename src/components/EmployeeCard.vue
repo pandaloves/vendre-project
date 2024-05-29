@@ -4,7 +4,7 @@
       <v-avatar size="50" class="mr-3">
         <v-img
           :src="employee.avatar"
-          alt="Profile Picture"
+          alt="profile image"
           class="profile-pic"
         ></v-img>
       </v-avatar>
@@ -12,7 +12,7 @@
     </v-card-title>
     <v-card-actions>
       <v-btn text :href="`mailto:${employee.email}`" class="contact-btn"
-        >Kontakta</v-btn
+        >Contact</v-btn
       >
     </v-card-actions>
   </v-card>
